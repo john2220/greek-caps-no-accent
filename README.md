@@ -1,15 +1,20 @@
 # Greek Caps No Accents
 
-This is a package to help you remove the accent from greek letters when capitalized.
-Simply add the "caps" class and you are all set.
+This is a package to help you remove the accent from greek letters and capitalize them.
+Simply add the "make-capitals" class and you are all set.
 
 # Installation
 
 `npm i greek-caps-no-accent`
 
 ```
-	<ul>
-		<li class="caps">Κολύμπα</li>
-		<li class="caps">... και φάε μουστοκούλουρο</li>
-	</ul>
+	<p class="make-capitals">Μου φάγανε το μουστοκούλουρο</p>
+
+```
+
+becomes
+
+```
+	<p class="make-capitals">ΜΟΥ ΦΑΓΑΝΕ ΤΟ ΜΟΥΣΤΟΚΟΥΛΟΥΡΟ</p>
+
 ```

@@ -1,40 +1,49 @@
-window.addEventListener("load", function() {
-   const stress = document.querySelectorAll(".caps");
+const stress = document.querySelectorAll('.make-capitals');
+const newLetter = [];
 
-   stress.forEach(eachWord => {
-      let word = eachWord.textContent;
+const LETTERS = {
+   A: 'ά',
+   E: 'έ',
+   H: 'ή',
+   I: 'ί',
+   O: 'ό',
+   Y: 'ύ',
+   V: 'ώ'
+};
 
-      function convertTones(word) {
-         let newLetter = [];
+window.addEventListener('load', function() {
+   stress.forEach((eachWord) => {
+      const word = eachWord.textContent;
 
-         for (var i = 0; i < word.length; i++) {
-            if (word.charAt(i) === "ά") {
-               let greek_a = (word.charAt(i).value = "α");
-               newLetter.push(greek_a);
-            } else if (word.charAt(i) === "έ") {
-               let greek_e = (word.charAt(i).value = "ε");
-               newLetter.push(greek_e);
-            } else if (word.charAt(i) === "ή") {
-               let greek_e = (word.charAt(i).value = "η");
-               newLetter.push(greek_e);
-            } else if (word.charAt(i) === "ί") {
-               let greek_e = (word.charAt(i).value = "ι");
-               newLetter.push(greek_e);
-            } else if (word.charAt(i) === "ό") {
-               let greek_e = (word.charAt(i).value = "ο");
-               newLetter.push(greek_e);
-            } else if (word.charAt(i) === "ύ") {
-               let greek_e = (word.charAt(i).value = "υ");
-               newLetter.push(greek_e);
-            } else if (word.charAt(i) === "ώ") {
-               let greek_e = (word.charAt(i).value = "ω");
-               newLetter.push(greek_e);
-            } else {
-               newLetter.push(word.charAt(i));
-            }
-         }
-         eachWord.innerHTML = newLetter.join("").toUpperCase();
-      }
       convertTones(word);
+
+      eachWord.innerHTML = newLetter.join('').toUpperCase();
    });
 });
+
+function convertTones(word) {
+   for (let i = 0; i < word.length; i++) {
+      newLetter.push(findLetter(word.charAt(i)));
+   }
+}
+
+function findLetter(character) {
+   switch (character) {
+      case LETTERS.A:
+         return 'α';
+      case LETTERS.E:
+         return 'ε';
+      case LETTERS.H:
+         return 'η';
+      case LETTERS.I:
+         return 'ι';
+      case LETTERS.O:
+         return 'ο';
+      case LETTERS.Y:
+         return 'υ';
+      case LETTERS.V:
+         return 'ω';
+      default:
+         return character;
+   }
+}
