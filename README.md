@@ -5,16 +5,18 @@ Simply add the "make-capitals" class and you are all set.
 
 # Installation
 
-`npm i greek-caps-no-accent`
+```
+npm i greek-caps-no-accent
+```
+
+# Usage
 
 ```
 	<p class="make-capitals">Μου φάγανε το μουστοκούλουρο</p>
-
 ```
 
-becomes
+ . . . becomes
 
 ```
 	<p class="make-capitals">ΜΟΥ ΦΑΓΑΝΕ ΤΟ ΜΟΥΣΤΟΚΟΥΛΟΥΡΟ</p>
-
 ```
